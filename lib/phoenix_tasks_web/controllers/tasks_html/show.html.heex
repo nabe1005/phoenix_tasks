@@ -1,0 +1,19 @@
+<Layouts.app flash={@flash}>
+  <.header>
+    Tasks {@tasks.id}
+    <:subtitle>This is a tasks record from your database.</:subtitle>
+    <:actions>
+      <.button navigate={~p"/tasks"}>
+        <.icon name="hero-arrow-left" />
+      </.button>
+      <.button variant="primary" navigate={~p"/tasks/#{@tasks}/edit?return_to=show"}>
+        <.icon name="hero-pencil-square" /> Edit tasks
+      </.button>
+    </:actions>
+  </.header>
+
+  <.list>
+    <:item title="Title">{@tasks.title}</:item>
+    <:item title="Description">{@tasks.description}</:item>
+  </.list>
+</Layouts.app>
